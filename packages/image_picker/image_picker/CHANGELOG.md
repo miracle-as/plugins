@@ -1,3 +1,38 @@
+## 0.7.5
+
+* Fixes an issue where image rotation is wrong when Select Photos chose and image is scaled.
+* Breaking Changes:
+    * Migrate to PHPicker for iOS 14 and higher versions to pick image from the photo library.
+    * Implement the limited permission to pick photo from the photo library when Select Photo is chose.
+
+## 0.7.4
+
+* Update flutter_plugin_android_lifecycle dependency to 2.0.1 to fix an R8 issue
+  on some versions.
+
+## 0.7.3
+
+* Endorse image_picker_for_web
+
+## 0.7.2+1
+
+* Android: fixes an issue where videos could be wrongly picked with `.jpg` extension.
+
+## 0.7.2
+
+* Run CocoaPods iOS tests in RunnerUITests target
+
+## 0.7.1
+
+* Update platform_plugin_interface version requirement.
+
+## 0.7.0
+
+* Migrate to nullsafety
+* Breaking Changes:
+    * Removed the deprecated methods: `ImagePicker.pickImage`, `ImagePicker.pickVideo`,
+`ImagePicker.retrieveLostData`
+
 ## 0.6.7+22
 
 * iOS: update XCUITests to separate each test session.
