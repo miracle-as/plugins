@@ -86,7 +86,7 @@ static const int SOURCE_GALLERY = 1;
         break;
       }
       case SOURCE_GALLERY:
-        [self checkPhotoAuthorization];
+        [self showPhotoLibrary];
         break;
       default:
         result([FlutterError errorWithCode:@"invalid_source"
