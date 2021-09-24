@@ -162,7 +162,7 @@ typedef NS_ENUM(NSInteger, ImagePickerClassType) { UIImagePickerClassType, PHPic
         [self checkCameraAuthorization];
         break;
       case SOURCE_GALLERY:
-        [self showPhotoLibrary];
+        [self showPhotoLibrary:UIImagePickerClassType];
         break;
       default:
         result([FlutterError errorWithCode:@"invalid_source"
