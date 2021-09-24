@@ -41,7 +41,7 @@ is not included selected photos and image is scaled.
 
 ## 0.7.3
 
-* Endorse image_picker_for_web
+* Endorse image_picker_for_web.
 
 ## 0.7.2+1
 
@@ -49,7 +49,7 @@ is not included selected photos and image is scaled.
 
 ## 0.7.2
 
-* Run CocoaPods iOS tests in RunnerUITests target
+* Run CocoaPods iOS tests in RunnerUITests target.
 
 ## 0.7.1
 
