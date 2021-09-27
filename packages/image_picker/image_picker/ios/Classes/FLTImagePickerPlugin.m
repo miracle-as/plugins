@@ -256,7 +256,7 @@ static const int SOURCE_GALLERY = 1;
 - (void)imagePickerController:(UIImagePickerController *)picker
     didFinishPickingMediaWithInfo:(NSDictionary<NSString *, id> *)info {
   NSURL *videoURL = [info objectForKey:UIImagePickerControllerMediaURL];
-  [_imagePickerController dismissViewControllerAnimated:YES completion:nil];
+  
   // The method dismissViewControllerAnimated does not immediately prevent
   // further didFinishPickingMediaWithInfo invocations. A nil check is necessary
   // to prevent below code to be unwantly executed multiple times and cause a
@@ -370,13 +370,17 @@ static const int SOURCE_GALLERY = 1;
   if (!self.result) {
     return;
   }
-  if (path) {
-    self.result(path);
-  } else {
-    self.result([FlutterError errorWithCode:@"create_error"
-                                    message:@"Temporary file could not be created"
-                                    details:nil]);
-  }
+
+  FlutterResult result = self.result;
+  [_imagePickerController dismissViewControllerAnimated:YES completion:^{
+    if (path) {
+      result(path);
+    } else {
+      result([FlutterError errorWithCode:@"create_error"
+                                      message:@"Temporary file could not be created"
+                                      details:nil]);
+    }
+  }];
   self.result = nil;
   _arguments = nil;
 }
