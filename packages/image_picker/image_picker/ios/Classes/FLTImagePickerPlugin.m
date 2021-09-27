@@ -248,6 +248,7 @@ static const int SOURCE_GALLERY = 1;
 
 - (void)showPhotoLibrary {
   // No need to check if SourceType is available. It always is.
+  os_log_info(OS_LOG_DEFAULT, "FLTImagePickerPlugin, showPhotoLibrary: presenting Photo Library");
   _imagePickerController.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
   [[self viewControllerWithWindow:nil] presentViewController:_imagePickerController
                                                     animated:YES
@@ -336,6 +337,7 @@ static const int SOURCE_GALLERY = 1;
 }
 
 - (void)imagePickerControllerDidCancel:(UIImagePickerController *)picker {
+  os_log_info(OS_LOG_DEFAULT, "FLTImagePickerPlugin, imagePickerControllerDidCancel: Cancel");
   [_imagePickerController dismissViewControllerAnimated:YES completion:nil];
   if (!self.result) {
     return;
