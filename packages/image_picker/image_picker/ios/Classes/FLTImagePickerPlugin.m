@@ -8,7 +8,7 @@
 #import <MobileCoreServices/MobileCoreServices.h>
 #import <Photos/Photos.h>
 #import <UIKit/UIKit.h>
-
+#import <os/log.h>
 #import "FLTImagePickerImageUtil.h"
 #import "FLTImagePickerMetaDataUtil.h"
 #import "FLTImagePickerPhotoAssetUtil.h"
@@ -256,6 +256,7 @@ static const int SOURCE_GALLERY = 1;
 
 - (void)imagePickerController:(UIImagePickerController *)picker
     didFinishPickingMediaWithInfo:(NSDictionary<NSString *, id> *)info {
+  os_log_info(OS_LOG_DEFAULT, "FLTImagePickerPlugin, didFinishPickingMediaWithInfo: %{public}@", info);
   NSURL *videoURL = [info objectForKey:UIImagePickerControllerMediaURL];
   [_imagePickerController dismissViewControllerAnimated:YES completion:nil];
   // The method dismissViewControllerAnimated does not immediately prevent
